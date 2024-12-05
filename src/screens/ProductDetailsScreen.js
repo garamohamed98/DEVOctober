@@ -10,6 +10,10 @@ import {
 } from "react-native";
 import products from "../data/products";
 
+const addToCart = ()=>{
+    console.warn('add to cart');
+}
+
 const ProductDetailsScreen = () => {
   const product = products[0];
   const { width } = useWindowDimensions();
@@ -31,7 +35,7 @@ const ProductDetailsScreen = () => {
           <Text style={styles.description}>{product.description}</Text>
         </View>
       </ScrollView>
-      <Pressable style={styles.button}>
+      <Pressable onPress={addToCart} style={styles.button}>
         <Text style={styles.buttonText}>Ajouter au panier</Text>
       </Pressable>
     </View>
