@@ -1,7 +1,11 @@
+import { useNavigation } from "@react-navigation/native";
 import { FlatList, Image, Pressable, StyleSheet, View } from "react-native";
-import products from "../data/products";
+import { useSelector } from "react-redux";
 
-const ProductScreen = ({ navigation }) => {
+
+const ProductScreen = () => {
+  const products = useSelector(state => state.products.products);
+  const navigation = useNavigation();
   return (
     <FlatList
       data={products}

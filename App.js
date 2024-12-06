@@ -1,9 +1,22 @@
-import { View } from "react-native";
-import ProductScreen from "./src/screens/ProductScreen";
-import ProductDetailsScreen from "./src/screens/ProductDetailsScreen";
-import ShoppingCart from "./src/screens/ShoppingCart";
 import Navigation from "./src/Navigation";
+import { Provider } from "react-redux";
+import store from "./src/store";
+import { StyleSheet, View } from "react-native";
 
 export default function App() {
-  return <Navigation />;
+  return (
+    <View style={styles.container}>
+      <Provider store={store}>
+        <Navigation />
+      </Provider>
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "#fff",
+    justifyContent: "center",
+  },
+});
